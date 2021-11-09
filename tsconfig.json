@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "forceConsistentCasingInFileNames": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "declaration": true,
+      "sourceMap": true,
+      "experimentalDecorators": true,
+      "skipLibCheck": true,
+      "importHelpers": true,
+      "strictNullChecks": false,
+      "noUnusedLocals": false,
+      "outDir": "lib",
+      "baseUrl": "./"
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules",
+      "lib",
+      "./tests/**"
+    ]
+  }

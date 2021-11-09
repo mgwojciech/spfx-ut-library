@@ -1,0 +1,27 @@
+{
+  "name": "spfx-ut-library",
+  "version": "1.0.0",
+  "description": "Helper library for unit testing spfx solutions",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgwojciech/spfx-ut-library.git"
+  },
+  "keywords": [
+    "spfx",
+    "unit",
+    "test"
+  ],
+  "author": "m.g.wojciechowski@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgwojciech/spfx-ut-library/issues"
+  },
+  "homepage": "https://github.com/mgwojciech/spfx-ut-library#readme",
+  "dependencies": {
+    "typescript": "^4.4.4"
+  }
+}
