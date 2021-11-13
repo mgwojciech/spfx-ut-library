@@ -1,3 +1,4 @@
+import { AadTokenProviderFactoryMock } from "../http/tokens/AadTokenProviderFactoryMock";
 import { GraphClientFactoryMock } from "../http/graph/GraphClientFactoryMock";
 import { IHttpClient } from "../http/IHttpClient";
 import { MockHttpClient } from "../http/MockHttpClient";
@@ -48,6 +49,7 @@ export class SPWebPartContextMock {
     public httpClient: IHttpClient;
     public spHttpClient: IHttpClient;
     public msGraphClientFactory: GraphClientFactoryMock = new GraphClientFactoryMock();
+    public aadTokenProviderFactory: AadTokenProviderFactoryMock = new AadTokenProviderFactoryMock();
     constructor() {
         this.domElement = document.createElement("div");
         this.domElement.id = this.instanceId;
