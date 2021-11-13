@@ -1,3 +1,4 @@
+import { SPEventMock } from "../SPEventMock";
 import { AddTokenDefaultErrorMock, AddTokenErrorMock } from "./AddTokenErrorMock";
 
 export class AadTokenProviderMock {
@@ -11,6 +12,12 @@ export class AadTokenProviderMock {
 		}
 		return Promise.reject(this.getError(resourceEndpoint));
 	}
+
+    public get tokenAcquisitionEvent(): SPEventMock<any> {
+        return new SPEventMock();
+    }
+
+    readonly onBeforeRedirectEvent: SPEventMock<any> = new SPEventMock();
 
 	public registerToken(resourceEndpoint: string, token: string): void {
 		let registeredTokenIndex = this.registeredTokens.findIndex(registeredToken => registeredToken.resourceEndpoint === resourceEndpoint);
@@ -30,6 +37,11 @@ export class AadTokenProviderMock {
 		}
 	}
 
+    public clearMocks(): void {
+        this.registeredTokens = [];
+        this.registeredErrorResponses = [];
+    }
+
 	private getError(resourceEndpoint: string): AddTokenErrorMock {
 		let registeredError = this.registeredErrorResponses.find(registeredError => registeredError.resourceEndpoint === resourceEndpoint);
 		if (registeredError) {
@@ -37,7 +49,4 @@ export class AadTokenProviderMock {
 		}
 		return new AddTokenDefaultErrorMock(resourceEndpoint, "https://contoso.onmicrosoft.com/");
 	}
-
-	//readonly onBeforeRedirectEvent: SPEvent<BeforeRedirectEventArgs>;
-	//get tokenAcquisitionEvent(): SPEvent<TokenAcquisitionEventArgs>;
 }
