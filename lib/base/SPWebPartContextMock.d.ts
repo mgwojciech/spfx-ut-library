@@ -1,3 +1,4 @@
+import { AadTokenProviderFactoryMock } from "../http/tokens/AadTokenProviderFactoryMock";
 import { GraphClientFactoryMock } from "../http/graph/GraphClientFactoryMock";
 import { IHttpClient } from "../http/IHttpClient";
 import { IClientSideWebPartStatusRenderer } from "../spInternal/IClientSideWebPartStatusRenderer";
@@ -31,6 +32,7 @@ export declare class SPWebPartContextMock {
     httpClient: IHttpClient;
     spHttpClient: IHttpClient;
     msGraphClientFactory: GraphClientFactoryMock;
+    aadTokenProviderFactory: AadTokenProviderFactoryMock;
     constructor();
     dispose(): void;
 }

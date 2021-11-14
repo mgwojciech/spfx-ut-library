@@ -6,3 +6,6 @@ export * from "./MockHttpResponse";
 export * from "./graph/GraphClientFactoryMock";
 export * from "./graph/GraphClientMock";
 export * from "./graph/GraphRequestMock";
+export * from "./tokens/AadTokenProviderFactoryMock";
+export * from "./tokens/AadTokenProviderMock";
+export * from "./tokens/AddTokenErrorMock";
