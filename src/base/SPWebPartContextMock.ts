@@ -49,7 +49,7 @@ export class SPWebPartContextMock {
     public httpClient: IHttpClient;
     public spHttpClient: IHttpClient;
     public msGraphClientFactory: GraphClientFactoryMock = new GraphClientFactoryMock();
-    public aadTokenProviderFactory: AadTokenProviderFactoryMock = new AadTokenProviderFactoryMock();
+    public aadTokenProviderFactory: AadTokenProviderFactoryMock;
     constructor() {
         this.domElement = document.createElement("div");
         this.domElement.id = this.instanceId;
@@ -59,6 +59,7 @@ export class SPWebPartContextMock {
         this.spHttpClient = this.serviceScope.consume(MockHttpClient.spHttpClientServiceKey);
         this.httpClient = this.serviceScope.consume(MockHttpClient.httpClientServiceKey);
         this.msGraphClientFactory = this.serviceScope.consume(GraphClientFactoryMock.graphClientFactoryMockKey);
+        this.aadTokenProviderFactory = this.serviceScope.consume(AadTokenProviderFactoryMock.serviceKey);
     }
     public dispose(): void {
 

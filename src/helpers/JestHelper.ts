@@ -1,3 +1,5 @@
+import { AadTokenProviderFactoryMock } from "../http/tokens/AadTokenProviderFactoryMock";
+
 export class JestHelper {
     public static registerMocks(jest) {
         jest.mock("@microsoft/sp-http", () => {
@@ -11,6 +13,9 @@ export class JestHelper {
                     configurations: {
                         v1: 1,
                     },
+                },
+                AadTokenProviderFactory: {
+                    serviceKey: AadTokenProviderFactoryMock.serviceKey,
                 }
             };
         });
