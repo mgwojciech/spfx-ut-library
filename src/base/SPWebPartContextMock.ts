@@ -58,7 +58,7 @@ export class SPWebPartContextMock {
         }
         this.spHttpClient = this.serviceScope.consume(MockHttpClient.spHttpClientServiceKey);
         this.httpClient = this.serviceScope.consume(MockHttpClient.httpClientServiceKey);
-        this.msGraphClientFactory = this.serviceScope.consume(GraphClientFactoryMock.graphClientFactoryMockKey);
+        this.msGraphClientFactory = this.serviceScope.consume(GraphClientFactoryMock.serviceKey);
         this.aadTokenProviderFactory = this.serviceScope.consume(AadTokenProviderFactoryMock.serviceKey);
     }
     public dispose(): void {

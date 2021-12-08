@@ -11,7 +11,7 @@ export class ServiceScopeMock {
         this.registrations = {};
         this._registerService(MockHttpClient.httpClientServiceKey, MockHttpClient.httpClientServiceKey.defaultCreator(this));
         this._registerService(MockHttpClient.spHttpClientServiceKey, MockHttpClient.httpClientServiceKey.defaultCreator(this));
-        this._registerService(GraphClientFactoryMock.graphClientFactoryMockKey, GraphClientFactoryMock.graphClientFactoryMockKey.defaultCreator(this));
+        this._registerService(GraphClientFactoryMock.serviceKey, GraphClientFactoryMock.serviceKey.defaultCreator(this));
     }
     public static startNewRoot(): ServiceScopeMock {
         return new ServiceScopeMock();
