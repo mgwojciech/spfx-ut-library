@@ -1,5 +1,4 @@
-import { MockHttpClient } from "..";
-import { AadTokenProviderFactoryMock } from "../http/tokens/AadTokenProviderFactoryMock";
+import { AadTokenProviderFactoryMock, GraphClientFactoryMock, MockHttpClient } from "..";
 
 export class JestHelper {
     public static registerMocks(jest) {
@@ -19,6 +18,9 @@ export class JestHelper {
                 },
                 AadTokenProviderFactory: {
                     serviceKey: AadTokenProviderFactoryMock.serviceKey,
+                },
+                MSGraphClientFactory: {
+                    serviceKey: GraphClientFactoryMock.serviceKey,
                 }
             };
         });
